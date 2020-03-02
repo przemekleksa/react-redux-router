@@ -1,12 +1,21 @@
 const initState = {
     posts: [
-        {id: '1', title: 'lorem fdfdsg'},
-        {id: '2', title: 'lored sgdfgm fdfdsg'},
-        {id: '3', title: 'gdgfgfdg orem fdfdsg'},
+        {id: '1', title: 'Shark is looking for scuba divers', body: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur voluptate laborum perferendis, enim repellendus ipsam sunt autem at odit dolorum, voluptatum suscipit iste harum cum magni itaque animi laudantium fugiat'},
+        {id: '2', title: 'Tuna is delicious', body: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur voluptate laborum perferendis, enim repellendus ipsam sunt autem at odit dolorum, voluptatum suscipit iste harum cum magni itaque animi laudantium fugiat'},
+        {id: '3', title: 'Salmon is just a weird fish', body: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur voluptate laborum perferendis, enim repellendus ipsam sunt autem at odit dolorum, voluptatum suscipit iste harum cum magni itaque animi laudantium fugiat'}
     ]
 }
 
 const rootReducer = (state = initState, action) => {
+    if (action.type = 'DELETE_POST') {
+        let newPosts = state.posts.filter(post => {
+            return action.id !== post.id
+        })
+        return {
+            ...state,
+            posts: newPosts
+        }
+    }
     return state
 }
 

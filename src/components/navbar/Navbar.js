@@ -8,7 +8,7 @@ const Navbar = (props) => {
     return (
         <nav className="nav-wrapper red darken-3">
             <div className="container">
-                <a  className="brand-logo">Vistula Times</a>
+                <a href="123" className="brand-logo">Vistula Times</a>
                 <ul className='right'>
                     <li><Link to="/">Home</Link></li>
                     <li><NavLink to="/about">About</NavLink></li>

@@ -1,23 +1,8 @@
 import React, { Component } from 'react'
-import axios from 'axios'
+import { connect } from 'react-redux'
 
 export class Post extends Component {
-    state = {
-        // id: null
-        post: null
-    }
-    componentDidMount(){
-        console.log(this.props)
-        let id = this.props.match.params.post_id
-        axios.get('https://jsonplaceholder.typicode.com/posts/'+id).then(response => {
-            this.setState({
-                post: response.data
-            })
-        })
-        // this.setState({
-        //     id: id
-        // })
-    }
+    
     render() {
         const post = this.state.post ? ( 
             <div className="post">
@@ -41,4 +26,4 @@ export class Post extends Component {
     }
 }
 
-export default Post
+export default connect()(Post)
